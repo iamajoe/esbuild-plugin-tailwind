@@ -42,8 +42,8 @@ func main() {
 			".css":   api.LoaderCSS,
 		},
 		Plugins:           []api.Plugin{
-            // "true" means tailwind will minify the output
-            estailwind.NewTailwindPlugin(true),
+            // NewTailwindPlugin(minify bool) api.Plugin
+            estailwind.NewTailwindPlugin(false),
         },
 	})
 }
