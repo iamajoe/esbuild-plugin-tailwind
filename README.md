@@ -15,12 +15,22 @@ The plugin will look for `tailwindcss` in 2 places:
 - on `$PATH`
 
 ## Usage
-```go
-package build
+```css
+/* input.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 
+```js
+// input.js
+import "./input.css";
+```
+
+```go
 import (
-	"github.com/evanw/esbuild/pkg/api"
-    "github.com/iamajoe/esbuild-plugin-tailwind"
+    "github.com/evanw/esbuild/pkg/api"
+    estailwind "github.com/iamajoe/esbuild-plugin-tailwind"
 )
 
 func main() {
