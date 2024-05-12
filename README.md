@@ -34,17 +34,17 @@ import (
 )
 
 func main() {
-	_ = api.Build(api.BuildOptions{
-		EntryPoints: []string{"input.js"},
-		Outfile:     "output.js",
-		Loader: map[string]api.Loader{
-			".js":    api.LoaderJS,
-			".css":   api.LoaderCSS,
-		},
-		Plugins:           []api.Plugin{
+    _ = api.Build(api.BuildOptions{
+        EntryPoints: []string{"input.js"},
+        Outfile:     "output.js",
+        Loader: map[string]api.Loader{
+            ".js":    api.LoaderJS,
+            ".css":   api.LoaderCSS,
+        },
+        Plugins: []api.Plugin{
             // NewTailwindPlugin(minify bool) api.Plugin
             estailwind.NewTailwindPlugin(false),
         },
-	})
+    })
 }
 ```
